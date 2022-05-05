@@ -322,6 +322,8 @@ export declare class LexicalNode {
   __type: string;
   __key: NodeKey;
   __parent: null | NodeKey;
+  __prev: NodeKey | null;
+  __next: NodeKey | null;
   getType(): string;
   clone(data: any): LexicalNode;
   importDOM(): DOMConversionMap | null;
@@ -661,7 +663,9 @@ export function $isRootNode(
  */
 export type ElementFormatType = 'left' | 'center' | 'right' | 'justify';
 export declare class ElementNode extends LexicalNode {
-  __children: Array<NodeKey>;
+  __first: NodeKey | null;
+  __last: NodeKey | null;
+  __size: number;
   __format: number;
   __indent: number;
   __dir: 'ltr' | 'rtl' | null;
