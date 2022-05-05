@@ -110,6 +110,7 @@ const externals = [
   '@lexical/clipboard',
   '@lexical/hashtag',
   '@lexical/history',
+  '@lexical/headless',
   '@lexical/selection',
   '@lexical/text',
   '@lexical/offset',
