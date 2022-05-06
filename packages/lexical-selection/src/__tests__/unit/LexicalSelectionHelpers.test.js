@@ -177,7 +177,10 @@ describe('LexicalSelectionHelpers tests', () => {
         expect($cloneContents(selection)).toEqual({
           nodeMap: [
             ['a', {...$getNodeByKey('a'), __text: ''}],
-            [element.getKey(), {...element, __children: ['a']}],
+            [
+              element.getKey(),
+              {...element, __first: 'a', __last: 'a', __size: 1},
+            ],
           ],
           range: [element.getKey()],
         });
@@ -699,7 +702,10 @@ describe('LexicalSelectionHelpers tests', () => {
         expect($cloneContents(selection)).toEqual({
           nodeMap: [
             ['a', {...$getNodeByKey('a'), __text: ''}],
-            [element.getKey(), {...element, __children: ['a']}],
+            [
+              element.getKey(),
+              {...element, __first: 'a', __last: 'a', __size: 1},
+            ],
           ],
           range: [element.getKey()],
         });
@@ -820,7 +826,10 @@ describe('LexicalSelectionHelpers tests', () => {
         expect($cloneContents(selection)).toEqual({
           nodeMap: [
             ['c', {...$getNodeByKey('c'), __text: ''}],
-            [element.getKey(), {...element, __children: ['c']}],
+            [
+              element.getKey(),
+              {...element, __first: 'c', __last: 'c', __size: 1},
+            ],
           ],
           range: [element.getKey()],
         });
@@ -1045,7 +1054,10 @@ describe('LexicalSelectionHelpers tests', () => {
         expect($cloneContents(selection)).toEqual({
           nodeMap: [
             ['a', $getNodeByKey('a')],
-            [element.getKey(), {...element, __children: ['a', 'b']}],
+            [
+              element.getKey(),
+              {...element, __first: 'a', __last: 'b', __size: 2},
+            ],
             ['b', {...$getNodeByKey('b'), __text: ''}],
           ],
           range: [element.getKey()],
@@ -1170,7 +1182,10 @@ describe('LexicalSelectionHelpers tests', () => {
         expect($cloneContents(selection)).toEqual({
           nodeMap: [
             ['a', $getNodeByKey('a')],
-            [element.getKey(), {...element, __children: ['a', 'b']}],
+            [
+              element.getKey(),
+              {...element, __first: 'a', __last: 'b', __size: 2},
+            ],
             ['b', {...$getNodeByKey('b'), __text: ''}],
           ],
           range: [element.getKey()],
