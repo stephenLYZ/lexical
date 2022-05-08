@@ -90,15 +90,15 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm i -g npm@8
-      - uses: actions/cache@v3
-        id: cache
-        with:
-          path: |
-            node_modules
-            ~/Library/Caches/ms-playwright
-          key: ${{ runner.os }}-v4-${{ hashFiles('package-lock.json') }}
+      # - uses: actions/cache@v3
+      #   id: cache
+      #   with:
+      #     path: |
+      #       node_modules
+      #       ~/Library/Caches/ms-playwright
+      #     key: ${{ runner.os }}-v4-${{ hashFiles('package-lock.json') }}
       - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
+        # if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
       - name: Download browsers
         run: npx playwright install
@@ -134,15 +134,15 @@ jobs:
           sudo apt-get update
           sudo apt-get install xvfb
       - run: npm i -g npm@8
-      - uses: actions/cache@v3
-        id: cache
-        with:
-          path: |
-            node_modules
-            ~/.cache/ms-playwright
-          key: ${{ runner.os }}-v4-${{ hashFiles('package-lock.json') }}
+      # - uses: actions/cache@v3
+      #   id: cache
+      #   with:
+      #     path: |
+      #       node_modules
+      #       ~/.cache/ms-playwright
+      #     key: ${{ runner.os }}-v4-${{ hashFiles('package-lock.json') }}
       - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
+        # if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
       - name: Download browsers
         run: npx playwright install
@@ -181,7 +181,7 @@ jobs:
       #       node_modules
       #       C:\Users\runneradmin\AppData\Local\ms-playwright
       #     key: ${{ runner.os }}-v4-${{ hashFiles('package-lock.json') }}
-      # - name: Install dependencies
+      - name: Install dependencies
       #   if: steps.cache.outputs.cache-hit != 'true'
       - run: npm ci
       - name: Download browsers
@@ -210,15 +210,15 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm i -g npm@8
-      - uses: actions/cache@v3
-        id: cache
-        with:
-          path: |
-            node_modules
-            ~/Library/Caches/ms-playwright
-          key: ${{ runner.os }}-v4-${{ hashFiles('package-lock.json') }}
+      # - uses: actions/cache@v3
+      #   id: cache
+      #   with:
+      #     path: |
+      #       node_modules
+      #       ~/Library/Caches/ms-playwright
+      #     key: ${{ runner.os }}-v4-${{ hashFiles('package-lock.json') }}
       - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
+        #   if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
       - name: Download browsers
         run: npx playwright install
@@ -250,15 +250,15 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install xvfb
-      - uses: actions/cache@v3
-        id: cache
-        with:
-          path: |
-            node_modules
-            ~/.cache/ms-playwright
-          key: ${{ runner.os }}-v4-${{ hashFiles('package-lock.json') }}
+      # - uses: actions/cache@v3
+      #   id: cache
+      #   with:
+      #     path: |
+      #       node_modules
+      #       ~/.cache/ms-playwright
+      #     key: ${{ runner.os }}-v4-${{ hashFiles('package-lock.json') }}
       - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
+        #   if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
       - name: Download browsers
         run: npx playwright install
@@ -286,13 +286,13 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm i -g npm@8
-      - uses: actions/cache@v3
-        id: cache
-        with:
-          path: |
-            node_modules
-            C:\Users\runneradmin\AppData\Local\ms-playwright
-          key: ${{ runner.os }}-v4-${{ hashFiles('package-lock.json') }}
+      # - uses: actions/cache@v3
+      #   id: cache
+      #   with:
+      #     path: |
+      #       node_modules
+      #       C:\Users\runneradmin\AppData\Local\ms-playwright
+      #     key: ${{ runner.os }}-v4-${{ hashFiles('package-lock.json') }}
       - name: Install dependencies
         #   if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
